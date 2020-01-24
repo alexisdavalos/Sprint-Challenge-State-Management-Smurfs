@@ -42,14 +42,16 @@ const SmurfForm = props => {
         if(smurfID !== '' || null){
             props.deleteSmurf(smurfID)
             setSmurfID('');
+            setValid(true)
         }else{
             setValid(false);
         }
         
     }
     return(
+        <>
         <div className='SmurfFormBox'>
-            <section>
+            <section className='FormBox'>
             <h3>Add A New Smurf!</h3>
             <form className='SmurfForm' onSubmit={handleNewSmurf}>
                     <label>Smurf Name:</label>
@@ -81,7 +83,7 @@ const SmurfForm = props => {
                 <button>Submit</button>
         </form>
             </section>
-            <section>
+            <section className='FormBox'>
             <h3>Delete A Smurf</h3>
             <form className='SmurfForm' onSubmit={handleDeleteSmurf}>
                 <label>Enter Smurf ID</label>
@@ -93,9 +95,14 @@ const SmurfForm = props => {
                     onChange={handleID}
                 />
                 <button>Submit</button>
+                {(!valid) ? <p className='error'>Oops This Can't be Empty!</p> : <p></p>}
             </form>
             </section>
     </div>
+        <div className='SmurfImg'>
+            <img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffarm5.static.flickr.com%2F4268%2F34479084140_877f3d0a27_b.jpg&f=1&nofb=1' />
+        </div>
+        </>
 )
 }
 const mapStateToProps = state =>{

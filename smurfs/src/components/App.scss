@@ -1,0 +1,89 @@
+header{
+  background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thestar.com%2Fcontent%2Fdam%2Fthestar%2Fentertainment%2Fmovies%2F2017%2F04%2F06%2Fsmurfs-the-lost-village-attempts-a-feminist-tone-review%2Fsmurfs.jpg&f=1&nofb=1');
+  background-size:cover;
+  background-position: center;
+  padding: 2%;
+  h1{
+    margin:0 auto;
+    padding: 2%;
+    background: #1a4e9fd9;
+    color:white;
+    width:25%;
+    border-radius: 50px;
+  }
+  box-shadow: 0px 9px 20px #000000a6;
+}
+input[type="text"] {
+  width:100%;
+  height:25px;
+  border:none;
+  background: none;
+  border-bottom: solid 2px#1a4e9fd9;
+  color:white;
+  font-size:1rem;
+}
+input[type='text']::placeholder{
+  color:white;
+  font-size:1rem;
+}
+button{
+  margin-top:10px;
+  background:#1a4e9fd9;
+  border: none;
+  padding:3%;
+  font-weight:bold;
+  text-transform: uppercase;
+  color:white;
+  border-radius: 50px;
+  width:200px;
+}
+.App {
+  text-align: center;
+}
+.SmurfBox{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.Smurf{
+  margin:1%;
+  padding: 1%;
+  width:250px;
+  border: solid 2px #126994f7;
+  color:white;
+  background: #126994a6;
+}
+.SmurfForm{
+  display:flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;
+  label{
+    text-align: left;
+    color:white;
+    padding:5%;
+  }
+  height:300px;
+  border: solid 2px #126994f7;
+  margin: 2%;
+  padding: 10%;
+  background: #126994a6;
+}
+.SmurfFormBox{
+  display:flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.FormBox{
+  width: 400px;
+}
+.SmurfImg img{
+  width:250px;
+}
+
+.error{
+  font-size: .75rem;
+  color:red;
+  font-weight:700;
+}
