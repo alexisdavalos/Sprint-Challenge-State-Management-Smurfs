@@ -1,18 +1,32 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
+import Smurf from './Smurf';
+import SmurfForm from './SmurfForm';
+
+//actions
+import {fetchSmurfs} from '../actions'
 
 const SmurfsBox = (props) => {
-    console.log(props)
+    console.log('Props in SmurfsBox.js:',props)
+    useEffect(() =>{
+        props.fetchSmurfs();
+    },[])
     return(
-        <div>
-            <h1>{props.title}</h1>
+        <>
+        <div className='SmurfBox'>
+           {(props.smurf === null) ? 
+           (<div>Loading...</div>) : 
+           (props.smurf.smurfs.map(smurf => (
+               <Smurf key={smurf.id} smurf={smurf}/>
+           )))}
         </div>
+        <SmurfForm/>
+        </>
     )
 }
 
 const mapStateToProps = state => {
     return {
-        title: state.title,
         isLoading: state.isLoading,
         smurf: state.smurf,
         error: state.error
@@ -20,4 +34,5 @@ const mapStateToProps = state => {
 }
 export default connect(
     mapStateToProps,
+    {fetchSmurfs}
 )(SmurfsBox);
