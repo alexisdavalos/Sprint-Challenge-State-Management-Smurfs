@@ -1,4 +1,5 @@
 const initialState = {
+    title: 'I am inside the reducer',
     isLoading: false,
     smurf: null,
     error: ''

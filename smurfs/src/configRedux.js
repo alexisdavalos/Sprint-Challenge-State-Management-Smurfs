@@ -1,7 +1,8 @@
 import { createStore, applyMiddleware } from 'redux';
-import reducer from './reducers';
+import {smurfReducer} from './reducers/smurfsReducer';
 import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
-const configRedux = () => createStore(reducer, applyMiddleware(thunk));
+const configRedux = () => createStore(smurfReducer, applyMiddleware(thunk, logger));
 
 export default configRedux;
